@@ -12,6 +12,7 @@ import createHttpError from 'http-errors';
 import { config } from 'dotenv-safe';
 import { type Error } from './services/index';
 import userRouter from './handlers/users';
+import productRouter from './handlers/products';
 
 config();
 
@@ -30,6 +31,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use('/api', userRouter);
+app.use('/api/products', productRouter);
 
 app.get('/', (req: Request, res: Response) => {
     res.status(200);

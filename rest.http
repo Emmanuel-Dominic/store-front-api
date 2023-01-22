@@ -63,3 +63,36 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuY
     "lastname": "Thomas",
     "password": "Password123"
 }
+
+### Get all products Route
+GET http://localhost:3000/api/products
+
+### Create product Route
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+
+{
+    "name": "Macbook",
+    "price": "2000"
+}
+
+### Get single product Route
+GET http://localhost:3000/api/products/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+
+### Update product Route
+PATCH http://localhost:3000/api/products/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+
+{
+    "name": "Macbook",
+    "price": "1900"
+}
+
+### Delete product Route
+DELETE http://localhost:3000/api/products/11
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
