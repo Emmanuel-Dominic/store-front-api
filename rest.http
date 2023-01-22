@@ -1,0 +1,65 @@
+### Dashboard Route
+GET http://localhost:3000/
+
+### Not Found
+GET http://localhost:3000/api/
+
+### Get all Users Route
+GET http://localhost:3000/api/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+### Authorization: Bearer {token}
+
+### Get single User Route
+GET http://localhost:3000/api/users/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+### Authorization: Bearer {token}
+
+### Register User Route
+POST http://localhost:3000/api/register
+Content-Type: application/json 
+
+{
+    "firstname": "Emmanuel",
+    "lastname": "Dominic",
+    "email": "ematembu2@gmail.com",
+    "password": "Password123"
+}
+
+### Register User 2 Route
+POST http://localhost:3000/api/register
+Content-Type: application/json 
+
+{
+    "firstname": "Matembu",
+    "lastname": "Emmanuel",
+    "email": "ematembu@gmail.com",
+    "password": "Password123"
+}
+
+### Login User Route
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "ematembu2@gmail.com",
+    "password": "Password123"
+}
+
+### Delete User Route
+DELETE http://localhost:3000/api/users/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+### Authorization: Bearer {token}
+
+### Update User Route
+PATCH http://localhost:3000/api/users/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+
+{
+    "firstname": "Michael",
+    "lastname": "Thomas",
+    "password": "Password123"
+}
