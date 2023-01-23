@@ -13,6 +13,7 @@ import { config } from 'dotenv-safe';
 import { type Error } from './services/index';
 import userRouter from './handlers/users';
 import productRouter from './handlers/products';
+import orderRouter from './handlers/orders';
 
 config();
 
@@ -32,6 +33,7 @@ app.use(bodyParser.json());
 
 app.use('/api', userRouter);
 app.use('/api/products', productRouter);
+app.use('/api/orders', orderRouter);
 
 app.get('/', (req: Request, res: Response) => {
     res.status(200);
