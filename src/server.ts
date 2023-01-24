@@ -14,6 +14,7 @@ import { type Error } from './services/index';
 import userRouter from './handlers/users';
 import productRouter from './handlers/products';
 import orderRouter from './handlers/orders';
+import dashboardRouter from './handlers/dashboard';
 
 config();
 
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 app.use('/api', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+app.use('/api/dashboard', dashboardRouter);
 
 app.get('/', (req: Request, res: Response) => {
     res.status(200);

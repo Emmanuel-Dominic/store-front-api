@@ -130,3 +130,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuY
     "productId": "1",
     "quantity": "2"
 }
+
+### Most 5 popular products Route
+GET http://localhost:3000/api/dashboard/popular
+
+### Completed Orders Route
+GET http://localhost:3000/api/dashboard/completed
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+
+### Get all Orders Route
+GET http://localhost:3000/api/dashboard/orders
