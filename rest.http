@@ -7,17 +7,17 @@ GET http://localhost:3000/api/
 ### Get all Users Route
 GET http://localhost:3000/api/users
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 ### Authorization: Bearer {token}
 
 ### Get single User Route
-GET http://localhost:3000/api/users/1
+GET http://localhost:3000/api/users/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 ### Authorization: Bearer {token}
 
 ### Register User Route
-POST http://localhost:3000/api/register
+POST http://localhost:3000/api/register/
 Content-Type: application/json 
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Register User 2 Route
-POST http://localhost:3000/api/register
+POST http://localhost:3000/api/register/
 Content-Type: application/json 
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ### Login User Route
-POST http://localhost:3000/api/login
+POST http://localhost:3000/api/login/
 Content-Type: application/json
 
 {
@@ -48,15 +48,15 @@ Content-Type: application/json
 }
 
 ### Delete User Route
-DELETE http://localhost:3000/api/users/1
+DELETE http://localhost:3000/api/users/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 ### Authorization: Bearer {token}
 
 ### Update User Route
-PATCH http://localhost:3000/api/users/1
+PATCH http://localhost:3000/api/users/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
     "firstname": "Michael",
@@ -65,12 +65,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuY
 }
 
 ### Get all products Route
-GET http://localhost:3000/api/products
+GET http://localhost:3000/api/products/
 
 ### Create product Route
-POST http://localhost:3000/api/products
+POST http://localhost:3000/api/products/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
     "name": "Macbook",
@@ -78,14 +78,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuY
 }
 
 ### Get single product Route
-GET http://localhost:3000/api/products/1
+GET http://localhost:3000/api/products/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 ### Update product Route
-PATCH http://localhost:3000/api/products/1
+PATCH http://localhost:3000/api/products/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
     "name": "Macbook",
@@ -93,38 +93,38 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuY
 }
 
 ### Delete product Route
-DELETE http://localhost:3000/api/products/11
+DELETE http://localhost:3000/api/products/11/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 ### Get all orders by given user Route
-GET http://localhost:3000/api/orders
+GET http://localhost:3000/api/orders/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 ### Create order Route
-POST http://localhost:3000/api/orders
+POST http://localhost:3000/api/orders/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 ### Get single order Route
-GET http://localhost:3000/api/orders/1
+GET http://localhost:3000/api/orders/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 ### Update order Route
-PATCH http://localhost:3000/api/orders/1
+PATCH http://localhost:3000/api/orders/1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
     "status": "open"
 }
 
 ### Add products to an order Route
-POST http://localhost:3000/api/orders/1/products
+POST http://localhost:3000/api/orders/1/products/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
     "productId": "1",
@@ -132,12 +132,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuY
 }
 
 ### Most 5 popular products Route
-GET http://localhost:3000/api/dashboard/popular
+GET http://localhost:3000/api/dashboard/popular/
 
 ### Completed Orders Route
-GET http://localhost:3000/api/dashboard/completed
+GET http://localhost:3000/api/dashboard/completed/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjg3ODJ9.YKn3q-vMpE8d3a2gYfFJz3yoD6qWv2mDWL_8ZaHKW7o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 ### Get all Orders Route
-GET http://localhost:3000/api/dashboard/orders
+GET http://localhost:3000/api/dashboard/orders/1/
