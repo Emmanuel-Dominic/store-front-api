@@ -14,15 +14,14 @@ export class DashboardQueries {
         }
     }
 
-    async allOrders(): Promise<object[]> {
+    async allOrdersByUser(userId: string): Promise<object[]> {
         try {
             const conn = await db.connect();
             const sql =
-                'SELECT op.quantity, o.id, o.status, p.id AS product_id, p.name, p.price, u.id AS user_id, u.firstname, u.lastname, u.email FROM order_products AS op INNER JOIN orders AS o ON o.id = op.order_id INNER JOIN products AS p ON p.id = op.product_id INNER JOIN users AS u ON u.id = o.user_id';
-            const result = await conn.query(sql);
+                'SELECT op.quantity, o.id, o.status, p.id AS product_id, p.name, p.price, u.id AS user_id, u.firstname, u.lastname, u.email FROM order_products AS op INNER JOIN orders AS o ON o.id = op.order_id INNER JOIN products AS p ON p.id = op.product_id INNER JOIN users AS u ON u.id = o.user_id WHERE u.id=$1';
+            const result = await conn.query(sql, [userId]);
             const rows = result.rows;
-            conn.release();
-            const data = [];
+            const data: object[] = [];
             for (let i = 0; i < rows.length; i++) {
                 data.push({
                     order: {
@@ -42,6 +41,7 @@ export class DashboardQueries {
                     },
                 });
             }
+            conn.release();
             return data;
         } catch (err) {
             throw new Error('unable get users with orders: ' + String(err));

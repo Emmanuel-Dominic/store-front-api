@@ -8,10 +8,15 @@ const orderStore = new OrderStore();
 const productStore = new ProductStore();
 
 orderRouter.get('/', verifyAuthToken, (async (req: Request, res: Response) => {
-    const { userId } = res.locals.user;
-    const orders = await orderStore.index(userId);
-    res.status(200);
-    res.json({ data: orders });
+    try {
+        const { userId } = res.locals.user;
+        const orders = await orderStore.index(userId);
+        res.status(200);
+        res.json({ data: orders });
+    } catch (err) {
+        res.status(400);
+        res.json(err);
+    }
 }) as RequestHandler);
 
 orderRouter.post('/', verifyAuthToken, (async (req: Request, res: Response) => {
@@ -26,7 +31,7 @@ orderRouter.post('/', verifyAuthToken, (async (req: Request, res: Response) => {
     }
 }) as RequestHandler);
 
-orderRouter.post('/:id/products', verifyAuthToken, (async (req: Request, res: Response) => {
+orderRouter.post('/:id/products/', verifyAuthToken, (async (req: Request, res: Response) => {
     const orderId: string = req.params.id;
     const productId: string = req.body.productId;
     const quantity: number = parseInt(req.body.quantity);
@@ -51,18 +56,23 @@ orderRouter.post('/:id/products', verifyAuthToken, (async (req: Request, res: Re
     }
 }) as RequestHandler);
 
-orderRouter.get('/:id', verifyAuthToken, (async (req: Request, res: Response) => {
-    const order = await orderStore.show(req.params.id);
-    if (order !== undefined) {
-        res.status(200);
-        res.json({ data: order });
-    } else {
-        res.status(404);
-        res.json({ message: 'order not found!' });
+orderRouter.get('/:id/', verifyAuthToken, (async (req: Request, res: Response) => {
+    try {
+        const order = await orderStore.show(req.params.id);
+        if (order !== undefined) {
+            res.status(200);
+            res.json({ data: order });
+        } else {
+            res.status(404);
+            res.json({ message: 'order not found!' });
+        }
+    } catch (err) {
+        res.status(400);
+        res.json(err);
     }
 }) as RequestHandler);
 
-orderRouter.patch('/:id', verifyAuthToken, (async (req: Request, res: Response) => {
+orderRouter.patch('/:id/', verifyAuthToken, (async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
         const status = req.body.status;

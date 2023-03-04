@@ -7,7 +7,7 @@ const userRouter = Router();
 const userStore = new UserStore();
 const secretToken = process.env.TOKEN_SECRET_KEY ?? 'yndw787hNSHS8wsn.shgs!jdks';
 
-export const verifyAuthToken = (async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+export const verifyAuthToken = ((req: Request, res: Response, next: NextFunction): any => {
     try {
         const authorizationHeader = req.headers.authorization ?? '';
         const token = authorizationHeader.split(' ')[1];
@@ -24,13 +24,13 @@ export const verifyAuthToken = (async (req: Request, res: Response, next: NextFu
     }
 }) as RequestHandler;
 
-userRouter.get('/users', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
+userRouter.get('/users/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
     const persons = await userStore.index();
     res.status(200);
     res.json({ data: persons });
 }) as RequestHandler);
 
-userRouter.get('/users/:id', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
+userRouter.get('/users/:id/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
     const person = await userStore.show(req.params.id);
     if (person !== undefined) {
         res.status(200);
@@ -41,7 +41,7 @@ userRouter.get('/users/:id', verifyAuthToken, (async (req: Request, res: Respons
     }
 }) as RequestHandler);
 
-userRouter.post('/register', (async (req: Request, res: Response): Promise<any> => {
+userRouter.post('/register/', (async (req: Request, res: Response): Promise<any> => {
     try {
         const person: User = {
             firstname: req.body.firstname,
@@ -52,13 +52,15 @@ userRouter.post('/register', (async (req: Request, res: Response): Promise<any> 
         const newUser = await userStore.create(person);
         const token = sign(newUser, secretToken);
         res.json({ user: newUser, access_token: token });
+        return res;
     } catch (err) {
         res.status(400);
         res.json(err);
+        return res;
     }
 }) as RequestHandler);
 
-userRouter.post('/login', (async (req: Request, res: Response): Promise<any> => {
+userRouter.post('/login/', (async (req: Request, res: Response): Promise<any> => {
     try {
         const person = {
             email: req.body.email,
@@ -73,7 +75,7 @@ userRouter.post('/login', (async (req: Request, res: Response): Promise<any> => 
     }
 }) as RequestHandler);
 
-userRouter.patch('/users/:id', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
+userRouter.patch('/users/:id/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
     try {
         const id = req.params.id;
         const firstname = req.body.firstname;
@@ -103,7 +105,7 @@ userRouter.patch('/users/:id', verifyAuthToken, (async (req: Request, res: Respo
     }
 }) as RequestHandler);
 
-userRouter.delete('/users/:id', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
+userRouter.delete('/users/:id/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
     const deleted = await userStore.delete(req.params.id);
     const person = await userStore.show(req.params.id);
     if (person !== undefined) {

@@ -25,7 +25,7 @@ productRouter.post('/', verifyAuthToken, (async (req: Request, res: Response) =>
     }
 }) as RequestHandler);
 
-productRouter.get('/:id', verifyAuthToken, (async (req: Request, res: Response) => {
+productRouter.get('/:id/', (async (req: Request, res: Response) => {
     const product = await productStore.show(req.params.id);
     if (product !== undefined) {
         res.status(200);
@@ -36,7 +36,7 @@ productRouter.get('/:id', verifyAuthToken, (async (req: Request, res: Response) 
     }
 }) as RequestHandler);
 
-productRouter.patch('/:id', verifyAuthToken, (async (req: Request, res: Response) => {
+productRouter.patch('/:id/', verifyAuthToken, (async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
         const name = req.body.name;
@@ -56,7 +56,7 @@ productRouter.patch('/:id', verifyAuthToken, (async (req: Request, res: Response
     }
 }) as RequestHandler);
 
-productRouter.delete('/:id', verifyAuthToken, (async (req: Request, res: Response) => {
+productRouter.delete('/:id/', verifyAuthToken, (async (req: Request, res: Response) => {
     const product = await productStore.show(req.params.id);
     if (product !== undefined) {
         const deleted = await productStore.delete(req.params.id);
