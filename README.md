@@ -37,6 +37,10 @@ To use `db-migrate` or run migrations using `db-migrate up` you need to install 
 
 - `npm install -g db-migrate`
 
+To run unittest while the in the .env file ENV='test', run `npm run test`
+
+![Unittests](./store-front-api-test.gif)
+
 ### 2.  Other requirements
 
 create .env file with the environmental variables listed in the `.env.example`
