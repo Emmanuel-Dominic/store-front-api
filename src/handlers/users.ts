@@ -71,8 +71,14 @@ userRouter.post('/login/', (async (req: Request, res: Response): Promise<any> =>
             password: req.body.password,
         };
         const userDetails = await userStore.authenticate(person.email, person.password);
-        const token = sign(String(userDetails != null || '{}'), secretToken);
-        res.json({ user: userDetails, access_token: token });
+        if (userDetails != null) {
+            const token = sign(String(userDetails != null || '{}'), secretToken);
+            res.status(200);
+            res.json({ user: userDetails, access_token: token });
+        } else {
+            res.status(400);
+            res.json({ message: 'Invalid email or password provided!' });
+        }
     } catch (err) {
         res.status(400);
         res.json(err);
