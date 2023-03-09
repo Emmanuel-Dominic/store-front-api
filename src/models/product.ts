@@ -34,8 +34,8 @@ export class ProductStore {
     async create(p: Product): Promise<Product> {
         try {
             const conn = await db.connect();
-            const sql = 'INSERT INTO products (name, price) VALUES($1, $2) RETURNING id, name, price';
-            const result = await conn.query(sql, [p.name, p.price]);
+            const sql = `INSERT INTO "products" ("name", "price") VALUES('${p.name}', '${p.price}') RETURNING id, name, price`;
+            const result = await conn.query(sql);
             conn.release();
             return result.rows[0];
         } catch (error) {

@@ -56,3 +56,6 @@ app.use(errorHandler);
 app.listen(3000, function () {
     console.log(`starting app on: ${address}`);
 });
+
+const server = app;
+export default server;

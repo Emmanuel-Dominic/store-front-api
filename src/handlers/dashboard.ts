@@ -6,19 +6,37 @@ const dashboardRouter = Router();
 const dashboard = new DashboardQueries();
 
 dashboardRouter.get('/popular/', (async (req: Request, res: Response) => {
-    const popular = await dashboard.fiveMostPopular();
-    res.json({ data: popular });
+    try {
+        const popular = await dashboard.fiveMostPopular();
+        res.status(200);
+        res.json({ data: popular });
+    } catch (err) {
+        res.status(400);
+        res.json(err);
+    }
 }) as RequestHandler);
 
 dashboardRouter.get('/completed/', verifyAuthToken, (async (req: Request, res: Response) => {
-    const completed = await dashboard.completedOrders();
-    res.json({ data: completed });
+    try {
+        const completed = await dashboard.completedOrders();
+        res.status(200);
+        res.json({ data: completed });
+    } catch (err) {
+        res.status(400);
+        res.json(err);
+    }
 }) as RequestHandler);
 
 dashboardRouter.get('/orders/:id/', verifyAuthToken, (async (req: Request, res: Response) => {
-    const userId: string = req.params.id;
-    const products = await dashboard.allOrdersByUser(userId);
-    res.json({ data: products });
+    try {
+        const userId: string = req.params.id;
+        const products = await dashboard.allOrdersByUser(userId);
+        res.status(200);
+        res.json({ data: products });
+    } catch (err) {
+        res.status(400);
+        res.json(err);
+    }
 }) as RequestHandler);
 
 export default dashboardRouter;

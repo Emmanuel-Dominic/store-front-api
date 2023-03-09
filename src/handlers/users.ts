@@ -25,9 +25,14 @@ export const verifyAuthToken = ((req: Request, res: Response, next: NextFunction
 }) as RequestHandler;
 
 userRouter.get('/users/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
-    const persons = await userStore.index();
-    res.status(200);
-    res.json({ data: persons });
+    try {
+        const persons = await userStore.index();
+        res.status(200);
+        res.json({ data: persons });
+    } catch (err) {
+        res.status(400);
+        res.json(err);
+    }
 }) as RequestHandler);
 
 userRouter.get('/users/:id/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
@@ -56,7 +61,6 @@ userRouter.post('/register/', (async (req: Request, res: Response): Promise<any>
     } catch (err) {
         res.status(400);
         res.json(err);
-        return res;
     }
 }) as RequestHandler);
 
@@ -106,14 +110,19 @@ userRouter.patch('/users/:id/', verifyAuthToken, (async (req: Request, res: Resp
 }) as RequestHandler);
 
 userRouter.delete('/users/:id/', verifyAuthToken, (async (req: Request, res: Response): Promise<any> => {
-    const deleted = await userStore.delete(req.params.id);
-    const person = await userStore.show(req.params.id);
-    if (person !== undefined) {
-        res.status(200);
-        res.json({ message: deleted });
-    } else {
-        res.status(404);
-        res.json({ message: 'user not found!' });
+    try {
+        const person = await userStore.show(req.params.id);
+        if (person !== undefined) {
+            const deleted = await userStore.delete(req.params.id);
+            res.status(200);
+            res.json({ message: deleted });
+        } else {
+            res.status(404);
+            res.json({ message: 'user not found!' });
+        }
+    } catch (err) {
+        res.status(400);
+        res.json(err);
     }
 }) as RequestHandler);
 

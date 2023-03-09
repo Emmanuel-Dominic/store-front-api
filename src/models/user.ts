@@ -89,7 +89,7 @@ export class UserStore {
             const sql = 'DELETE FROM users WHERE id=($1)';
             await conn.query(sql, [id]);
             conn.release();
-            return 'User ' + String(id) + ' is succefully deleted!';
+            return 'User ' + String(id) + ' is successfully deleted!';
         } catch (error) {
             throw new Error('Could not delete user ' + String(id) + ' Error: ' + String(error));
         }
