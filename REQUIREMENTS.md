@@ -27,12 +27,18 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 ## Data Shapes
 
+### Database Tables
+
+![store-front-api tables](tables.png)
+
 ### Product
 
 - id
 - name
 - price
 - [OPTIONAL] category
+
+![store-front-api products](products.png)
 
 ### User
 
@@ -42,9 +48,22 @@ These are the notes from a meeting with the frontend developer that describe wha
 - email
 - password
 
+![store-front-api users](users.png)
+
 ### Order
 
 - id of each product in the order
 - quantity of each product in the order
 - user_id
 - status of order (active or complete)
+
+![store-front-api orders](orders.png)
+
+### order_products
+
+- id of each order_products
+- quantity
+- order_id
+- product_id
+
+![store-front-api order_products](order_products.png)

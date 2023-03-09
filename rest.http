@@ -43,7 +43,7 @@ POST http://localhost:3000/api/login/
 Content-Type: application/json
 
 {
-    "email": "ematembu@gmail.com",
+    "email": "ematembu2@gmail.com",
     "password": "Password123"
 }
 
@@ -73,7 +73,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
-    "name": "Macbook",
+    "name": "Mac Book",
     "price": "2000"
 }
 
@@ -118,7 +118,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiRW1tYW51ZWwiLCJsYXN0bmFtZSI6IkRvbWluaWMiLCJlbWFpbCI6ImVtYXRlbWJ1MkBnbWFpbC5jb20iLCJpYXQiOjE2Nzc5NDk4MTN9.ygBxAYTtVRsNfTyZP3rA3n-hL-BHMqh6b-e1R6SyLwc
 
 {
-    "status": "open"
+    "status": "closed"
 }
 
 ### Add products to an order Route
